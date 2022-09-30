@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Work Manager</string>
+    <string name="notification_verbose_name">🎬 Vídeo novo no canal</string>
+</resources>
