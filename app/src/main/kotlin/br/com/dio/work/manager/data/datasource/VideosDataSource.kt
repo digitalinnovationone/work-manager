@@ -19,4 +19,6 @@ object VideosDataSource {
             object : TypeToken<T>() {}.type
         )
     }
+
+    fun getRandomVideo(): Video = list.random()
 }
