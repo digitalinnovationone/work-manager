@@ -17,22 +17,22 @@ import com.squareup.picasso.Picasso
 private const val NOTIFICATION_ID = 1
 private const val CHANNEL_ID = "new_channel_video"
 
-fun Context.createBigPictureNotification(
+fun Context.showBigPictureNotification(
     video: Video
 ) {
     val bitmapBigPicture = Picasso.get()
         .load(video.thumbnail).get()
 
-    createNotification(
+    showNotification(
         video = video,
         bitmapBigPicture = bitmapBigPicture
     )
 }
 
-private fun Context.createNotification(video: Video, bitmapBigPicture: Bitmap? = null) {
+private fun Context.showNotification(video: Video, bitmapBigPicture: Bitmap? = null) {
     createNotificationChannel()
 
-    val notificationBuilder = getNotification(
+    val notification = getNotification(
         video = video,
         bitmapBigPicture = bitmapBigPicture
     )
@@ -41,7 +41,7 @@ private fun Context.createNotification(video: Video, bitmapBigPicture: Bitmap? =
         .from(this)
         .notify(
             NOTIFICATION_ID,
-            notificationBuilder
+            notification
         )
 }
 
